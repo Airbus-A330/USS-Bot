@@ -66,4 +66,10 @@ client.on('message', message => {
     command.execute(client, message, args);
 });
 
+client.on('messageDelete', async (message) => {
+    db.set(`snipe.content`, message.content);
+    db.set(`snipe.authorName`, message.author.tag);
+    db.set(`snipe.authorIcon`, message.author.displayAvatarURL({ format: 'png', dynamic: true }));
+});
+
 client.login(config.token)
