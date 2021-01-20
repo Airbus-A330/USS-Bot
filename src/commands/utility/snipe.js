@@ -8,11 +8,12 @@ module.exports = {
         let content = db.get(`snipe.content`);
         let authorIcon = db.get(`snipe.authorIcon`);
         let authorName = db.get(`snipe.authorName`);
+        let channelID = db.get(`snipe.channel`);
 
         const snipeEmbed = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setAuthor(authorName, authorIcon)
-            .setDescription(content)
+            .setDescription(content + `\n\n<#${channelID}>`)
             .setTimestamp()
         message.channel.send(snipeEmbed)
     }
