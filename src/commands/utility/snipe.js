@@ -9,6 +9,12 @@ module.exports = {
         let authorIcon = db.get(`snipe.authorIcon`);
         let authorName = db.get(`snipe.authorName`);
         let channelID = db.get(`snipe.channel`);
+        if (!channelID === message.channel.id) {
+            const noID = new Discord.MessageEmbed()
+                .setColor('RANDOM')
+                .setDescription('There are no messages to snipe in this channel!')
+            return message.channel.send(noID)
+        }
 
         const snipeEmbed = new Discord.MessageEmbed()
             .setColor('RANDOM')
