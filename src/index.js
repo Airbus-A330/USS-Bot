@@ -30,7 +30,7 @@ client.on('message', message => {
     if (prefix === null) prefix = config.dp;
     if (!message.content.startsWith(prefix) || message.author.bot) {
         if (message.mentions.users.first() === client.user) {
-            message.channel.send('What do you want dumbass');
+            message.channel.send('Ughhhhh <@559200051629654026> they\'re asking for my nudes again. Can you tell them to shoo pls\n\n||For legal reasons, just like my developer this is a joke||');
         } else return;
     }
 
