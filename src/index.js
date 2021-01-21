@@ -30,7 +30,7 @@ client.on('message', message => {
     if (prefix === null) prefix = config.dp;
     if (!message.content.startsWith(prefix) || message.author.bot) {
         if (message.mentions.users.first() === client.user) {
-            message.channel.send('I hate to break it to you but as of now I am completely useless so yeah. I\'m in-development, if you have questions ask my boss/developer (I don\'t like him but I have to listen to him so yeah)');
+            message.channel.send('I hate to break it to you but as of now I am completely useless so yeah. I\'m in-development, if you have questions ask my boss/developer, <@559200051629654026>. (I don\'t like him but I have to listen to him so yeah)');
         } else return;
     }
 
