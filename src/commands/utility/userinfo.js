@@ -7,7 +7,7 @@ module.exports = {
         let user = message.mentions.users.first();
         if (!user) {
             if (!Number.isNaN(args[0])) {
-                user = message.guild.users.cache.get(`${args[0]}`).tag;
+                user = message.guild.users.cache.get(args[0]).tag;
             }
         }
         console.log(user);
