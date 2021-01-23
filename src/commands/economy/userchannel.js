@@ -21,11 +21,12 @@ module.exports = {
                             allow: ['MANAGE_MESSAGES'],
                         },
                     ],
-                }).then(channel => {
+                }).then(async channel => {
                     let category = message.guild.channels.cache.find(c => c.id === '738079217513791578' && c.type === 'category');
                     channel.setParent(category.id);
                     db.set(`${message.author.id}.econChannelID`, channel.id);
-                    message.channel.send(`Channel set to <#${db.get(`${message.author.id}.econChannelID`)}>`);
+                    let channelID = db.get(`${message.author.id}.econChannelID`);
+                    message.channel.send(`Channel set to <#${channelID}>`);
                 }).catch(console.error)
             
             } else {

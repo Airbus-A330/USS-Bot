@@ -20,7 +20,7 @@ module.exports = {
         console.log(member);
 
         const userInfo = new Discord.MessageEmbed()
-            .setColor('RANDOM')
+            .setColor(member.displayHexColor)
             .setTitle(`Userinfo - ${member.user.tag}`)
             .setThumbnail(`${member.user.displayAvatarURL({ format: 'png', dynami: true })}`)
             .addFields(
