@@ -3,10 +3,11 @@ const db = require('quick.db');
 
 module.exports = {
     name: 'work',
+    aliases: ['w'],
     cooldown:  30,
     description: 'work for some money',
     execute (client, message, args) {
-        let user = message.author.id;
+        let user = message.author;
 
         var responses = [
             "You worked at your minimum-wage job and earned",
@@ -18,6 +19,7 @@ module.exports = {
         let response = responses[whichResponse];
 
         let balance = db.get(`${user}.balance`);
+        if (balance === null || balance === undefined) balance = 0;
         let newBal = Math.round(Math.random() * 100);
 
         let combinedBal = balance + newBal;

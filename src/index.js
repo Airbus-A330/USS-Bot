@@ -36,8 +36,8 @@ client.on('message', message => {
 
     let args = message.content.slice(prefix.length).trim().split(/ +/);
     let commandName = args.shift().toLowerCase();
-    if (!client.commands.has(commandName)) return;
-    const command = client.commands.get(commandName)
+    const command = client.commands.get(commandName);
+    if (!command) return;
 
     if (!cooldowns.has(command.name)) {
         cooldowns.set(command.name, new Discord.Collection());
