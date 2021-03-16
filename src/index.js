@@ -18,7 +18,7 @@ fs.readdirSync(__dirname + `/commands`).forEach(folder => {
 client.on('ready', () => {
     console.log(`Ready! Logged in as - ${client.user.tag}`);
     setInterval(() => {
-        const statuses = config.statuses;
+        const statuses = statuses;
         const index = Math.floor(Math.random() * (statuses.length));
         client.user.setActivity(statuses[index], ({ type: "PLAYING" }));
     }, 10000);
@@ -28,7 +28,7 @@ client.on('ready', () => {
 client.on('message', message => {
     if (!message.guild) return;
     let prefix = db.get(`prefix`);
-    if (prefix === null) prefix = config.dp;
+    if (prefix === null) prefix = dp;
     if (!message.content.startsWith(prefix) || message.author.bot) {
         if (message.mentions.users.first() === client.user) {
             message.channel.send('I hate to break it to you but as of now I am completely useless so yeah. I\'m in-development, if you have questions ask my boss/developer, <@559200051629654026>. (I don\'t like him but I have to listen to him so yeah)');
@@ -74,4 +74,4 @@ client.on('messageDelete', async (message) => {
     db.set(`snipe.channel`, message.channel.id);
 });
 
-client.login(config.token)
+client.login(token).catch(console.error);
