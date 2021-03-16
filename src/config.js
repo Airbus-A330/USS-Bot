@@ -1,6 +1,6 @@
-{
+module.exports = {
     "dp": ".",
-    "token": "NzI0NjcxNDI0ODA3MDQzMTAy.XvDk2w.bScs2nt7tXFjDE_HJdihi4armk8",
+    "token": process.env.TOKEN,
     "statuses": [
         "USS",
         "Presidential election simulator",
@@ -8,4 +8,4 @@
         "Biden simulator",
         "Monica Lewinski roleplay"
     ]
-}
+};
