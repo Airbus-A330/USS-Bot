@@ -1,8 +1,9 @@
 const Discord = require('discord.js');
-const config = require('./config.json');
+const { dp, statuses, token } = require('./config.js');
 const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 const db = require('quick.db');
 const fs = require('fs');
+require("dotenv").config();
 
 const cooldowns = new Discord.Collection();
 client.commands = new Map()
