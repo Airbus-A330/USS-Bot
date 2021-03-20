@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const { dp, statuses, token } = require('./config.js');
+const { dp, statuses, presence, token } = require('./config.js');
 const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 const db = require('quick.db');
 const fs = require('fs');
@@ -22,7 +22,7 @@ client.on('ready', () => {
         const index = Math.floor(Math.random() * (statuses.length));
         client.user.setActivity(statuses[index].status, ({ type: statuses[index].type, url: statuses[index].url }));
     }, 10000);
-    client.user.setStatus('idle')
+    client.user.setStatus(presence);
 });
 
 client.on('message', message => {
