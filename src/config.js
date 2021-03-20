@@ -1,5 +1,6 @@
 module.exports = {
     "dp": ".",
+    "presence": "idle",
     "token": process.env.TOKEN,
     "statuses": [
         {
