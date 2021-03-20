@@ -20,7 +20,7 @@ client.on('ready', () => {
     setInterval(() => {
         const statuses = statuses;
         const index = Math.floor(Math.random() * (statuses.length));
-        client.user.setActivity(statuses[index], ({ type: "PLAYING" }));
+        client.user.setActivity(statuses[index].status, ({ type: statuses[index].type, url: statuses[index].url }));
     }, 10000);
     client.user.setStatus('idle')
 });
