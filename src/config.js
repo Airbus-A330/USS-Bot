@@ -2,10 +2,30 @@ module.exports = {
     "dp": ".",
     "token": process.env.TOKEN,
     "statuses": [
-        "USS",
-        "Presidential election simulator",
-        "Election fraud simulator",
-        "Biden simulator",
-        "Monica Lewinski roleplay"
+        {
+            status: "USS",
+            type: "PLAYING",
+            url: "https://ussapi.ga"
+        },
+        {
+            status: "Presidential election simulator",
+            type: "PLAYING",
+            url: "https://ussapi.ga"
+        },
+        {
+            status: "Election fraud simulator",
+            type: "PLAYING",
+            url: "https://ussapi.ga"
+        },
+        {
+            status: "Biden simulator",
+            type: "PLAYING",
+            url: "https://ussapi.ga"
+        },
+        {
+            status: "Monica Lewinksi roleplay",
+            type: "WATCHING",
+            url: "https://ussapi.ga"
+        }
     ]
 };
